@@ -1,0 +1,43 @@
+{
+  "listen": ":9090",
+  "providers": {
+    "adams": {
+      "type": "proxy",
+      "base_url": "http://adams.internal/v1",
+      "headers": {
+        "Authorization": "Bearer your-static-token"
+      }
+    },
+    "polaris": {
+      "type": "direct",
+      "base_url": "https://api.deepseek.com/v1",
+      "api_key": "your-api-key"
+    },
+    "ichat": {
+      "type": "ichat",
+      "base_url": "https://ichat.internal/v1",
+      "app_id": "your-app-id",
+      "secret": "your-secret"
+    }
+  },
+  "models": {
+    "qwen3-max": {
+      "provider": "adams",
+      "model": "qwen3-max",
+      "use_vision": false,
+      "use_tool_calling": true
+    },
+    "deepseek-reasoner": {
+      "provider": "polaris",
+      "model": "deepseek-reasoner",
+      "use_vision": false,
+      "use_tool_calling": false
+    },
+    "claude-sonnet": {
+      "provider": "ichat",
+      "model": "claude-sonnet-4",
+      "use_vision": true,
+      "use_tool_calling": true
+    }
+  }
+}

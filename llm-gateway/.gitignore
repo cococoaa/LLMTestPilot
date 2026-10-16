@@ -1,0 +1,20 @@
+# Go 编译产物
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# 真实配置（含密钥，严禁提交；从 config.example.json 复制后填入真实值）
+config.json
+config.local.json
+*.local.json
+
+# 日志与临时文件
+*.log
+*.tmp
+
+# 运行时数据（任务记录、截图）
+data/
